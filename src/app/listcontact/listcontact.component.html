@@ -1,0 +1,47 @@
+<h3>List of Contacts</h3>
+<p-table [value]="contacts | async">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>First name</th>
+            <th>Phone</th>
+            <th>View Details</th>
+            <th>Edit entry</th>
+            <th>Delete</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-contact>
+        <tr>
+            <td>{{contact.firstname}}</td>
+            <td>{{contact.phone}}</td>
+            <td><button pButton type="button"  icon=" pi pi-info-circle" iconPos="left" label="View" class="ui-button-secondary ui-button-raised ui-button-rounded " (click)="viewDetails(contact)"></button></td>
+            <td><button pButton type="button" icon="pi pi-pencil" iconPos="left" label="Update" class="ui-button-success ui-button-raised ui-button-rounded" (click)="updateContact(contact)"></button></td>
+            <td><button pButton type="button" icon="pi pi-trash" iconPos="left" label="Delete" class="ui-button-danger ui-button-raised ui-button-rounded" (click)="deleteContact(contact)"></button></td>
+        </tr>
+    </ng-template>
+</p-table>
+<!-- <p-dataTable [value]="contacts" [style]="{'margin-top':'25px','margin-bottom':'20px'}">
+
+
+  <p-column field="firstname" header="Firstname"></p-column>
+  <p-column field="phone" header="Phone"></p-column>
+  <p-column field="" header="View" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button pButton type="button"  icon=" pi pi-info-circle" iconPos="left" label="View" class="ui-button-info" (click)="viewDetails(row)"></button>
+    </ng-template>
+  </p-column>
+  <p-column field="" header="Edit" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button pButton type="button" icon="pi pi-pencil" iconPos="left" label="Update" class="ui-button-warning" (click)="updateContact()"></button>
+    </ng-template>
+  </p-column>
+  <p-column field="" header="Delete" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button pButton type="button" icon="pi pi-trash" iconPos="left" label="Delete" class="ui-button-danger" (click)="deleteContact(row)"></button>
+    </ng-template>
+
+
+  </p-column>
+
+
+
+</p-dataTable> -->
